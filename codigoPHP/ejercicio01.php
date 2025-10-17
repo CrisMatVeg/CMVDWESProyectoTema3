@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio 01</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ejercicio 01</title>
+    </head>
 
-<body>
-    <?php
+    <body>
+        <?php
+        /*  @author Cristian Mateos Vega
+         *  @since 09/10/2025
+         */
+
         $vString = "Cadena";
         $vInt = 42;
         $vFloat = 3.1416;
@@ -20,7 +24,7 @@
         print_r($vBool);
         echo "\n";
         var_dump($vString, $vInt, $vFloat, $vBool);
-    ?>
-</body>
+        ?>
+    </body>
 
 </html>

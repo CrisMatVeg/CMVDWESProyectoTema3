@@ -40,14 +40,14 @@
             }
 
             span {
-                color: rgb(255, 255, 255);
+                color: black;
                 display: block;
                 padding-top: 15px;
             }
 
             a {
                 text-decoration: underline;
-                color: #fff;
+                color: black;
             }
 
             #iconos {
@@ -127,19 +127,18 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                color: white;
+                color: black;
                 font-weight: bold;
                 font-size: 1.2rem;
                 z-index: 0;
                 padding: 15px;
-                margin: 10px;
                 width: 100vw;
                 height: 100%;
-                background: #111111a9;
+                background: white;
             }
 
             td{
-                border: 1px solid white;
+                border: 1px solid black;
                 height: 50px;
                 padding: 10px;
             }
@@ -322,111 +321,100 @@
                 <tr>
                     <td class="numero">9</td>
                     <td class="enunciado">Mostrar el path donde se encuentra el fichero que se está ejecutando.</td>
-                    <td><i class="fa-solid fa-play"></i></td>
-                    <td><i class="fa-solid fa-code"></i></td>
+                    <td><a href="./codigoPHP/ejercicio09.php" target="_blank">
+                            <i class="fa-solid fa-play"></i>
+                        </a></td>
+                    <td><a href="./mostrarcodigo/mostrarcodigo09.php" target="_blank">
+                            <i class="fa-solid fa-code"></i>
+                        </a></td>
                 </tr>
                 <tr>
                     <td class="numero">10</td>
                     <td class="enunciado">Mostrar el contenido del fichero que se está ejecutando.
                     </td>
-                    <td><i class="fa-solid fa-play"></i></td>
-                    <td><i class="fa-solid fa-code"></i></td>
+                    <td><a href="./codigoPHP/ejercicio10.php" target="_blank">
+                            <i class="fa-solid fa-play"></i>
+                        </a></td>
+                    <td><a href="./mostrarcodigo/mostrarcodigo10.php" target="_blank">
+                            <i class="fa-solid fa-code"></i>
+                        </a></td>
                 </tr>
                 <tr>
                     <td class="numero">11</td>
-                    <td class="enunciado"></td>
-                    <td><i class="fa-solid fa-play"></i></td>
-                    <td><i class="fa-solid fa-code"></i></td>
+                    <td class="enunciado">
+                    </td>
+                    <td></td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td class="numero">12</td>
-                    <td class="enunciado"></td>
-                    <td><i class="fa-solid fa-play"></i></td>
-                    <td><i class="fa-solid fa-code"></i></td>
+                    <td class="enunciado">Mostrar el contenido de las variables superglobales (utilizando print_r() y foreach()).
+                    </td>
+                    <td><a href="./codigoPHP/ejercicio12.php" target="_blank">
+                            <i class="fa-solid fa-play"></i>
+                        </a></td>
+                    <td><a href="./mostrarcodigo/mostrarcodigo12.php" target="_blank">
+                            <i class="fa-solid fa-code"></i>
+                        </a></td>
                 </tr>
                 <tr>
                     <td class="numero">13</td>
-                    <td class="enunciado"></td>
-                    <td><i class="fa-solid fa-play"></i></td>
-                    <td><i class="fa-solid fa-code"></i></td>
+                    <td class="enunciado">
+                    </td>
+                    <td></td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td class="numero">14</td>
-                    <td class="enunciado"></td>
-                    <td><i class="fa-solid fa-play"></i></td>
-                    <td><i class="fa-solid fa-code"></i></td>
+                    <td class="enunciado">
+                    </td>
+                    <td></td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td class="numero">15</td>
-                    <td class="enunciado"></td>
-                    <td><i class="fa-solid fa-play"></i></td>
-                    <td><i class="fa-solid fa-code"></i></td>
+                    <td class="enunciado">Crear e inicializar un array con el sueldo percibido de lunes a domingo. Recorrer el array para calcular el sueldo percibido durante la
+semana.
+                    </td>
+                    <td><a href="./codigoPHP/ejercicio15.php" target="_blank">
+                            <i class="fa-solid fa-play"></i>
+                        </a></td>
+                    <td><a href="./mostrarcodigo/mostrarcodigo15.php" target="_blank">
+                            <i class="fa-solid fa-code"></i>
+                        </a></td>
                 </tr>
                 <tr>
                     <td class="numero">16</td>
-                    <td class="enunciado"></td>
-                    <td><i class="fa-solid fa-play"></i></td>
-                    <td><i class="fa-solid fa-code"></i></td>
+                    <td class="enunciado">Recorrer el array anterior utilizando funciones para obtener el mismo resultado.
+                    </td>
+                    <td><a href="./codigoPHP/ejercicio16.php" target="_blank">
+                            <i class="fa-solid fa-play"></i>
+                        </a></td>
+                    <td><a href="./mostrarcodigo/mostrarcodigo16.php" target="_blank">
+                            <i class="fa-solid fa-code"></i>
+                        </a></td>
                 </tr>
                 <tr>
                     <td class="numero">17</td>
-                    <td class="enunciado"></td>
-                    <td><i class="fa-solid fa-play"></i></td>
-                    <td><i class="fa-solid fa-code"></i></td>
+                    <td class="enunciado">Inicializar un array bidimensional y recorrerlo de distintas formas (Teatro).
+                    </td>
+                    <td><a href="./codigoPHP/ejercicio17.php" target="_blank">
+                            <i class="fa-solid fa-play"></i>
+                        </a></td>
+                    <td><a href="./mostrarcodigo/mostrarcodigo17.php" target="_blank">
+                            <i class="fa-solid fa-code"></i>
+                        </a></td>
                 </tr>
                 <tr>
                     <td class="numero">18</td>
-                    <td class="enunciado"></td>
-                    <td><i class="fa-solid fa-play"></i></td>
-                    <td><i class="fa-solid fa-code"></i></td>
-                </tr>
-                <tr>
-                    <td class="numero">19</td>
-                    <td class="enunciado"></td>
-                    <td><i class="fa-solid fa-play"></i></td>
-                    <td><i class="fa-solid fa-code"></i></td>
-                </tr>
-                <tr>
-                    <td class="numero">20</td>
-                    <td class="enunciado"></td>
-                    <td><i class="fa-solid fa-play"></i></td>
-                    <td><i class="fa-solid fa-code"></i></td>
-                </tr>
-                <tr>
-                    <td class="numero">21</td>
-                    <td class="enunciado"></td>
-                    <td><i class="fa-solid fa-play"></i></td>
-                    <td><i class="fa-solid fa-code"></i></td>
-                </tr>
-                <tr>
-                    <td class="numero">22</td>
-                    <td class="enunciado"></td>
-                    <td><i class="fa-solid fa-play"></i></td>
-                    <td><i class="fa-solid fa-code"></i></td>
-                </tr>
-                <tr>
-                    <td class="numero">23</td>
-                    <td class="enunciado"></td>
-                    <td><i class="fa-solid fa-play"></i></td>
-                    <td><i class="fa-solid fa-code"></i></td>
-                </tr>
-                <tr>
-                    <td class="numero">24</td>
-                    <td class="enunciado"></td>
-                    <td><i class="fa-solid fa-play"></i></td>
-                    <td><i class="fa-solid fa-code"></i></td>
-                </tr>
-                <tr>
-                    <td class="numero">25</td>
-                    <td class="enunciado"></td>
-                    <td><i class="fa-solid fa-play"></i></td>
-                    <td><i class="fa-solid fa-code"></i></td>
-                </tr>
-                <tr>
-                    <td class="numero">26</td>
-                    <td class="enunciado"></td>
-                    <td><i class="fa-solid fa-play"></i></td>
-                    <td><i class="fa-solid fa-code"></i></td>
+                    <td class="enunciado">Recorrer el array anterior utilizando funciones para obtener el mismo resultado.
+                    </td>
+                    <td><a href="./codigoPHP/ejercicio18.php" target="_blank">
+                            <i class="fa-solid fa-play"></i>
+                        </a></td>
+                    <td><a href="./mostrarcodigo/mostrarcodigo18.php" target="_blank">
+                            <i class="fa-solid fa-code"></i>
+                        </a></td>
                 </tr>
             </table>
         </main>

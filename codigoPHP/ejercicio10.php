@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Ejercicio 00</title>
+        <title>Ejercicio 10</title>
     </head>
 
     <body>
@@ -12,9 +12,7 @@
         /*  @author Cristian Mateos Vega
          *  @since 09/10/2025
          */
-
-        echo "Hola Mundo!@";
-        echo phpinfo();
+        highlight_file(__FILE__);
         ?>
     </body>
 
