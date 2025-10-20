@@ -13,7 +13,9 @@
          *  @since 17/10/2025
          */
         $teatro = [];
-
+        define("NFILAS", 20);
+        define("NCOLUMNAS", 15);
+        
         for ($indiceFilas = 0; $indiceFilas < 20; $indiceFilas++) {
             for ($indiceColumnas = 0; $indiceColumnas < 15; $indiceColumnas++) {
                 $teatro[$indiceFilas][$indiceColumnas] = null;
@@ -28,9 +30,9 @@
         
         // FOR
         echo "<b>RECORRIDO CON FOR</b><br>";
-        for ($indiceFilas = 0; $indiceFilas < 20; $indiceFilas++) {
+        for ($indiceFilas = 0; $indiceFilas < NFILAS; $indiceFilas++) {
             echo "en la fila " . $indiceFilas + 1 . " están ocupados los asientos: ";
-            for ($indiceColumnas = 0; $indiceColumnas < 15; $indiceColumnas++) {
+            for ($indiceColumnas = 0; $indiceColumnas < NCOLUMNAS; $indiceColumnas++) {
                 if ($teatro[$indiceFilas][$indiceColumnas] != null) {
                     echo "'" . $indiceColumnas + 1 . " por " . $teatro[$indiceFilas][$indiceColumnas] . "'" . " ";
                 }

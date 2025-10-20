@@ -416,6 +416,45 @@ semana.
                             <i class="fa-solid fa-code"></i>
                         </a></td>
                 </tr>
+                <tr>
+                    <td class="numero">19</td>
+                    <td class="enunciado">
+                    </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="numero">20</td>
+                    <td class="enunciado">
+                    </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="numero">21</td>
+                    <td class="enunciado">Construir un formulario para recoger un cuestionario realizado a una persona y enviarlo a una página Tratamiento.php para que muestre
+las preguntas y las respuestas recogidas.
+
+                    </td>
+                    <td><a href="./codigoPHP/ejercicio21cuestionario.php" target="_blank">
+                            <i class="fa-solid fa-play"></i>
+                        </a></td>
+                    <td><a href="./mostrarcodigo/mostrarcodigo21tratamiento.php" target="_blank">
+                            <i class="fa-solid fa-code"></i>
+                        </a></td>
+                </tr>
+                <tr>
+                    <td class="numero">22</td>
+                    <td class="enunciado">Construir un formulario para recoger un cuestionario realizado a una persona y mostrar en la misma página las preguntas y las respuestas
+recogidas.
+                    </td>
+                    <td><a href="./codigoPHP/ejercicio22.php" target="_blank">
+                            <i class="fa-solid fa-play"></i>
+                        </a></td>
+                    <td><a href="./mostrarcodigo/mostrarcodigo22.php" target="_blank">
+                            <i class="fa-solid fa-code"></i>
+                        </a></td>
+                </tr>
             </table>
         </main>
 
