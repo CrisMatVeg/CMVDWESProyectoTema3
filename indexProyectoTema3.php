@@ -6,97 +6,19 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Proyecto Tema 3</title>
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="./webroot/css/estilos.css">
+        <link rel="stylesheet" href="./webroot/css/fonts.css">
         <style>
-
-            @font-face {
-                font-family: 'MiFuente';
-                src: url('./webroot/fonts/Audiowide-Regular.ttf') format('woff2'),
-                    url('./webroot/fonts/Audiowide-Regular.ttf') format('woff');
-                font-weight: normal;
-                font-style: normal;
-            }
-
-            * {
-                font-family: "MiFuente";
-                font-weight: 200;
-            }
-
-            body {
-                margin: 0;
-                display: flex;
-                flex-direction: column;
-                min-height: 100vh;
-                overflow-y: auto;
-            }
-
-            #videofondo {
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                z-index: -1;
-            }
-
-            span {
-                color: black;
-                display: block;
-                padding-top: 15px;
-            }
-
-            a {
-                text-decoration: underline;
-                color: black;
-            }
-
-            #iconos {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-
-            #iconos * {
-                margin: 10px;
-            }
-
-            header {
-                position: fixed;
-                display: flex;
-                justify-content: space-around;
-                align-items: center;
-                top: 0;
-                left: 0;
-                right: 0;
-                background: #52213d60;
-                color: #fff;
-                text-align: center;
-                padding: 15px;
-                z-index: 1000;
-                height: 60px;
-                backdrop-filter: blur(7px);
-                box-shadow: 0px 0px 30px rgba(227,228,237,0.37);
-                flex-shrink: 0;
-
-            }
-
             footer {
                 position: relative;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                background: #52213d60;
-                color: #fff;
-                text-align: center;
-                padding: 15px;
-                z-index: 1000;
-                backdrop-filter: blur(7px);
-                box-shadow: 0px 0px 20px rgba(227,228,237,0.37);
-                flex-shrink: 0;
+            }
 
+            a i{
+                color: #020202;
+            }
+            
+            footer i{
+                color: white;
             }
 
             main {
@@ -117,6 +39,7 @@
             }
 
             table{
+                margin-top: 5px;
                 position: relative;
                 overflow: hidden;
                 border-radius: 7px;
@@ -142,6 +65,10 @@
                 height: 50px;
                 padding: 10px;
             }
+            
+            tr td:nth-child(2){
+                font-family: sans-serif;
+            }
 
             tr td:nth-child(3){
                 cursor:pointer;
@@ -150,69 +77,10 @@
             tr td:nth-child(4){
                 cursor:pointer;
             }
-
-            .overlay {
-                position: absolute;
-                inset: 0;
-                opacity: 0;
-                transition: opacity 0.3s ease;
-                border-radius: 7px;
-                z-index: 1;
-                background: #111111a9;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                overflow: hidden;
-            }
-
-            .card span {
-                position: relative;
-                z-index: 2;
-            }
-
-            a span:hover {
-                transform: scale(1.05);
-            }
-
-            .card:hover {
-                box-shadow: 0 0 20px rgba(183, 0, 255, 0.5);
-            }
-
-
-            .card:hover .overlay {
-                opacity: 1;
-            }
-
-            .card::before {
-                content: '';
-                position: absolute;
-                top: -50%;
-                left: -50%;
-                width: 200%;
-                height: 200%;
-                transform: rotate(-45deg);
-                transition: all 0.5s ease;
-                opacity: 0;
-            }
-
-            .card::before {
-                background: linear-gradient(0deg,
-                    transparent,
-                    transparent 30%,
-                    rgba(204, 0, 255, 0.3));
-            }
-
-            .card:hover::before {
-                opacity: 1;
-                transform: rotate(-45deg) translateY(100%);
-            }
         </style>
     </head>
 
     <body>
-        <video autoplay muted loop id="videofondo">
-            <source src="./webroot/images/videofondo.mp4" type="video/mp4">
-        </video>
         <header>
             <h2>DAW2</h2>
             <h1>Proyecto Tema 3</h1>
@@ -374,7 +242,7 @@
                 <tr>
                     <td class="numero">15</td>
                     <td class="enunciado">Crear e inicializar un array con el sueldo percibido de lunes a domingo. Recorrer el array para calcular el sueldo percibido durante la
-semana.
+                        semana.
                     </td>
                     <td><a href="./codigoPHP/ejercicio15.php" target="_blank">
                             <i class="fa-solid fa-play"></i>
@@ -433,7 +301,7 @@ semana.
                 <tr>
                     <td class="numero">21</td>
                     <td class="enunciado">Construir un formulario para recoger un cuestionario realizado a una persona y enviarlo a una página Tratamiento.php para que muestre
-las preguntas y las respuestas recogidas.
+                        las preguntas y las respuestas recogidas.
 
                     </td>
                     <td><a href="./codigoPHP/ejercicio21cuestionario.php" target="_blank">
@@ -446,12 +314,38 @@ las preguntas y las respuestas recogidas.
                 <tr>
                     <td class="numero">22</td>
                     <td class="enunciado">Construir un formulario para recoger un cuestionario realizado a una persona y mostrar en la misma página las preguntas y las respuestas
-recogidas.
+                        recogidas.
                     </td>
                     <td><a href="./codigoPHP/ejercicio22.php" target="_blank">
                             <i class="fa-solid fa-play"></i>
                         </a></td>
                     <td><a href="./mostrarcodigo/mostrarcodigo22.php" target="_blank">
+                            <i class="fa-solid fa-code"></i>
+                        </a></td>
+                </tr>
+                <tr>
+                    <td class="numero">23</td>
+                    <td class="enunciado">Construir un formulario para recoger un cuestionario realizado a una persona y mostrar en la misma página las preguntas y las respuestas
+recogidas; en el caso de que alguna respuesta esté vacía o errónea volverá a salir el formulario con el mensaje correspondiente
+                    </td>
+                    <td><a href="./codigoPHP/ejercicio23.php" target="_blank">
+                            <i class="fa-solid fa-play"></i>
+                        </a></td>
+                    <td><a href="./mostrarcodigo/mostrarcodigo23.php" target="_blank">
+                            <i class="fa-solid fa-code"></i>
+                        </a></td>
+                </tr>
+                <tr>
+                    <td class="numero">24</td>
+                    <td class="enunciado">Construir un formulario para recoger un cuestionario realizado a una persona y mostrar en la misma página las preguntas y las respuestas
+recogidas; en el caso de que alguna respuesta esté vacía o errónea volverá a salir el formulario con el mensaje correspondiente, pero las
+respuestas que habíamos tecleado correctamente aparecerán en el formulario y no tendremos que volver a teclearlas.
+
+                    </td>
+                    <td><a href="./codigoPHP/ejercicio24.php" target="_blank">
+                            <i class="fa-solid fa-play"></i>
+                        </a></td>
+                    <td><a href="./mostrarcodigo/mostrarcodigo24.php" target="_blank">
                             <i class="fa-solid fa-code"></i>
                         </a></td>
                 </tr>
