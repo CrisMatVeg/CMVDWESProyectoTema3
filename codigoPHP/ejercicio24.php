@@ -71,7 +71,7 @@
             ?>
             <form action="" method="post">
                 <label for="nombre">Nombre:</label><br>
-                <input type="text" name="nombre" id="nombre" value="<?php echo ($aErrores['nombre'] == '') ? $aRespuestas['nombre'] : ''; ?>">
+                <input type="text" name="nombre" id="nombre" value="<?php echo ($aErrores['nombre'] == '') ? $aRespuestas['nombre'] : ''; ?>" required>
                 <span style="color:red;"><?php echo $aErrores['nombre']; ?></span><br><br>
 
                 <label for="edad">Edad:</label><br>

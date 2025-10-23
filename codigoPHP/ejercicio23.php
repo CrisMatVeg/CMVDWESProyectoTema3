@@ -64,6 +64,7 @@
             // Aquí iría el procesamiento con datos válidos
             echo "<h2>Formulario enviado correctamente</h2>";
             echo "<p>Nombre: " . $aRespuestas['nombre'] . "</p>";
+            echo "<p>Apellidos: BLOQUEADO" . "</p>";
             echo "<p>Edad: " . $aRespuestas['edad'] . "</p>";
             echo "<p>Altura: " . $aRespuestas['altura'] . "</p>";
         } else {
@@ -73,6 +74,9 @@
                 <label for="nombre">Nombre:</label><br>
                 <input type="text" name="nombre" id="nombre" required>
                 <span style="color:red;"><?php echo $aErrores['nombre']; ?></span><br><br>
+                
+                <label for="nombre">Apellidos:</label><br>
+                <input type="text" name="nombre" id="nombre" disabled><br><br>
 
                 <label for="edad">Edad:</label><br>
                 <input type="number" name="edad" id="edad">

@@ -5,6 +5,21 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Ejercicio 17</title>
+        <style>
+            td,tr{
+                width: 85px;
+                height: 65px;
+                background-color: lightgreen;
+                border: 1px black solid;
+                text-align: center;
+            }
+            .ocupado{
+                background-color: lightcoral;
+            }
+            .nFila, .nColumna{
+                background-color: lightgrey;
+            }
+        </style>
     </head>
 
     <body>
@@ -15,7 +30,7 @@
         $teatro = [];
         define("NFILAS", 20);
         define("NCOLUMNAS", 15);
-        
+
         for ($indiceFilas = 0; $indiceFilas < 20; $indiceFilas++) {
             for ($indiceColumnas = 0; $indiceColumnas < 15; $indiceColumnas++) {
                 $teatro[$indiceFilas][$indiceColumnas] = null;
@@ -27,54 +42,83 @@
         $teatro[11][7] = "maria";
         $teatro[0][8] = "javier";
 
-        
-        // FOR
-        echo "<b>RECORRIDO CON FOR</b><br>";
-        
-        for ($indiceFilas = 0; $indiceFilas < NFILAS; $indiceFilas++) {
-            echo "en la fila " . $indiceFilas + 1 . " están ocupados los asientos: ";
-            for ($indiceColumnas = 0; $indiceColumnas < NCOLUMNAS; $indiceColumnas++) {
-                if ($teatro[$indiceFilas][$indiceColumnas] != null) {
-                    echo "'" . $indiceColumnas + 1 . " por " . $teatro[$indiceFilas][$indiceColumnas] . "'" . " ";
-                }
-            }
-            echo '<br>';
+        // FOREACH
+        echo "<br>";
+        echo "<b>RECORRIDO CON FOREACH</b><br><br>";
+        echo '<table>';
+        echo "<tr>";
+        echo "<td class='nColumna'></td>";
+        foreach ($teatro[0] as $nColumna => $fila) {
+            echo "<td class='nColumna'> Columna " . ($nColumna + 1) . "</td>";
         }
 
-        
+        echo "</tr>";
+        foreach ($teatro as $indiceFilas => $fila) {
+            echo "<tr>";
+            echo "<td class='nFila'>Fila " . ($indiceFilas + 1) . "</td>";
+            foreach ($fila as $indiceColumnas => $valor) {
+                if ($valor != null) {
+                    echo "<td class='ocupado'>" . $valor . "</td>";
+                } else {
+                    echo "<td></td>";
+                }
+            }
+            echo '</tr>';
+        }
+        echo '</table><br>';
+
+        // FOR
+        echo "<b>RECORRIDO CON FOR</b><br></br>";
+        echo '<table>';
+        echo "<tr>";
+        echo "<td class='nColumna'></td>";
+        foreach ($teatro[0] as $nColumna => $fila) {
+            echo "<td class='nColumna'> Columna " . ($nColumna + 1) . "</td>";
+        }
+
+        echo "</tr>";
+        for ($indiceFilas = 0; $indiceFilas < NFILAS; $indiceFilas++) {
+            echo "<tr>";
+            echo "<td class='nFila'>Fila " . ($indiceFilas + 1) . "</td>";
+            for ($indiceColumnas = 0; $indiceColumnas < NCOLUMNAS; $indiceColumnas++) {
+                if ($teatro[$indiceFilas][$indiceColumnas] != null) {
+                    echo "<td class='ocupado'>" . $teatro[$indiceFilas][$indiceColumnas] . "</td>";
+                } else {
+                    echo "<td></td>";
+                }
+            }
+            echo '</tr>';
+        }
+        echo '</table><br>';
+
         // WHILE
         echo "<br>";
-        echo "<b>RECORRIDO CON WHILE</b><br>";
+        echo "<b>RECORRIDO CON WHILE</b><br><br>";
+        echo '<table>';
+        echo "<tr>";
+        echo "<td class='nColumna'></td>";
+        foreach ($teatro[0] as $nColumna => $fila) {
+            echo "<td class='nColumna'> Columna " . ($nColumna + 1) . "</td>";
+        }
+
+        echo "</tr>";
         $indiceFilas = 0;
         while ($indiceFilas < 20) {
-            echo "en la fila " . ($indiceFilas + 1) . " están ocupados los asientos: ";
-
+            echo "<tr>";
+            echo "<td class='nFila'>Fila " . ($indiceFilas + 1) . "</td>";
             $indiceColumnas = 0;
             while ($indiceColumnas < 15) {
                 if ($teatro[$indiceFilas][$indiceColumnas] != null) {
-                    echo "'" . ($indiceColumnas + 1) . " por " . $teatro[$indiceFilas][$indiceColumnas] . "'" . " ";
+                    echo "<td class='ocupado'>" . $teatro[$indiceFilas][$indiceColumnas] . "</td>";
+                } else {
+                    echo "<td></td>";
                 }
                 $indiceColumnas++;
             }
-
-            echo "<br>";
+            echo '</tr>';
             $indiceFilas++;
         }
-
-        
-        // FOREACH
-        echo "<br>";
-        echo "<b>RECORRIDO CON FOREACH</b><br>";
-        foreach ($teatro as $indiceFilas => $fila) {
-            echo "en la fila " . ($indiceFilas + 1) . " están ocupados los asientos: ";
-
-            foreach ($fila as $indiceColumnas => $valor) {
-                if ($valor !== null) {
-                    echo "'" . ($indiceColumnas + 1) . " por " . $valor . "'" . " ";
-                }
-            }
-            echo "<br>";
-        }
+        echo '</table><br>';
         ?>
     </body>
 
