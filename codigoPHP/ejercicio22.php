@@ -9,6 +9,9 @@
     <body>
 
         <?php
+        /*  @author Cristian Mateos Vega
+         *  @since 20/10/2025
+         */
         if (isset($_REQUEST['enviar'])) {
             echo ("<br>");
             $nombre = isset($_REQUEST['nombre']) ? htmlspecialchars($_REQUEST['nombre']) : '';

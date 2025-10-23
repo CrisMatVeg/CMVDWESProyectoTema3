@@ -8,6 +8,9 @@
     </head>
     <body>
         <?php
+        /*  @author Cristian Mateos Vega
+         *  @since 22/10/2025
+         */
 //Inicialización de variables
         require_once '../core/231018libreriaValidacion.php';
         $entradaOK = true;
@@ -24,24 +27,24 @@
 
 // Comprobar si el formulario se ha enviado
         if (isset($_REQUEST['enviar'])) {
-            if (validacionFormularios::comprobarAlfaNumerico($_REQUEST['nombre'], 100, 1, 0) != null) {
-                $aErrores['nombre'] = validacionFormularios::comprobarAlfaNumerico($_REQUEST['nombre'], 100, 1, 0);
+            if (validacionFormularios::comprobarAlfaNumerico($_REQUEST['nombre'], 100, 1, 1) != null) {
+                $aErrores['nombre'] = validacionFormularios::comprobarAlfaNumerico($_REQUEST['nombre'], 100, 1, 1);
                 $entradaOK = false;
             } else {
                 $aRespuestas['nombre'] = htmlspecialchars($_REQUEST['nombre']);
             }
 
             // Validar edad (entero)
-            if (validacionFormularios::comprobarEntero($_REQUEST['edad'], 100, 5, 0) != null) {
-                $aErrores['edad'] = validacionFormularios::comprobarEntero($_REQUEST['edad'], 100, 5, 0);
+            if (validacionFormularios::comprobarEntero($_REQUEST['edad'], 100, 5, 1) != null) {
+                $aErrores['edad'] = validacionFormularios::comprobarEntero($_REQUEST['edad'], 100, 5, 1);
                 $entradaOK = false;
             } else {
                 $aRespuestas['edad'] = (int) $_REQUEST['edad'];
             }
 
             // Validar altura (float)
-            if (validacionFormularios::comprobarFloat($_REQUEST['altura'], 100, 1, 0) != null) {
-                $aErrores['altura'] = validacionFormularios::comprobarFloat($_REQUEST['altura'], 100, 1, 0);
+            if (validacionFormularios::comprobarFloat($_REQUEST['altura'], 100, 1, 1) != null) {
+                $aErrores['altura'] = validacionFormularios::comprobarFloat($_REQUEST['altura'], 100, 1, 1);
                 $entradaOK = false;
             } else {
                 $aRespuestas['altura'] = (float) $_REQUEST['altura'];
@@ -53,9 +56,9 @@
 
 // Tratamiento del formulario
         if ($entradaOK) {
-            // Aquí iría el procesamiento con datos válidos
+            //Mostrar respuestas con datos (correctos) introducidos
             echo "<h2>Formulario enviado correctamente</h2>";
-            echo "<p>String: " . htmlspecialchars($aRespuestas['nombre']) . "</p>";
+            echo "<p>String: " . $aRespuestas['nombre'] . "</p>";
             echo "<p>Entero: " . $aRespuestas['edad'] . "</p>";
             echo "<p>Float: " . $aRespuestas['altura'] . "</p>";
         } else {

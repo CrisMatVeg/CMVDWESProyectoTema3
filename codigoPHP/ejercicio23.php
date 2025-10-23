@@ -8,6 +8,9 @@
     </head>
     <body>
         <?php
+        /*  @author Cristian Mateos Vega
+         *  @since 22/10/2025
+         */
 //Inicialización de variables
         require_once '../core/231018libreriaValidacion.php';
         $entradaOK = true;
@@ -53,9 +56,9 @@
 
 // Tratamiento del formulario
         if ($entradaOK) {
-            // Aquí iría el procesamiento con datos válidos
+            //Mostrar respuestas con datos (correctos) introducidos
             echo "<h2>Formulario enviado correctamente</h2>";
-            echo "<p>Nombre: " . htmlspecialchars($aRespuestas['nombre']) . "</p>";
+            echo "<p>Nombre: " . $aRespuestas['nombre'] . "</p>";
             echo "<p>Edad: " . $aRespuestas['edad'] . "</p>";
             echo "<p>Altura: " . $aRespuestas['altura'] . "</p>";
         } else {
