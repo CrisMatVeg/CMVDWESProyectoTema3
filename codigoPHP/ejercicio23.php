@@ -5,6 +5,14 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Ejercicio 23</title>
+        <style>
+            input:required{
+                background-color: lightyellow;
+            }
+            input:disabled{
+                background-color: lightgrey;
+            }
+        </style>
     </head>
     <body>
         <?php
@@ -24,24 +32,24 @@
 
 // Comprobar si el formulario se ha enviado
         if (isset($_REQUEST['enviar'])) {
-            if (validacionFormularios::comprobarAlfaNumerico($_REQUEST['nombre'], 100, 1, 1) != null) {
-                $aErrores['nombre'] = validacionFormularios::comprobarAlfaNumerico($_REQUEST['nombre'], 100, 1, 1);
+            if (validacionFormularios::comprobarAlfaNumerico($_REQUEST['nombre'], 100, 1, 0) != null) {
+                $aErrores['nombre'] = validacionFormularios::comprobarAlfaNumerico($_REQUEST['nombre'], 100, 1, 0);
                 $entradaOK = false;
             } else {
                 $aRespuestas['nombre'] = htmlspecialchars($_REQUEST['nombre']);
             }
 
             // Validar edad (entero)
-            if (validacionFormularios::comprobarEntero($_REQUEST['edad'], 100, 5, 1) != null) {
-                $aErrores['edad'] = validacionFormularios::comprobarEntero($_REQUEST['edad'], 100, 5, 1);
+            if (validacionFormularios::comprobarEntero($_REQUEST['edad'], 100, 5, 0) != null) {
+                $aErrores['edad'] = validacionFormularios::comprobarEntero($_REQUEST['edad'], 100, 5, 0);
                 $entradaOK = false;
             } else {
                 $aRespuestas['edad'] = (int) $_REQUEST['edad'];
             }
 
             // Validar altura (float)
-            if (validacionFormularios::comprobarFloat($_REQUEST['altura'], 100, 1, 1) != null) {
-                $aErrores['altura'] = validacionFormularios::comprobarFloat($_REQUEST['altura'], 100, 1, 1);
+            if (validacionFormularios::comprobarFloat($_REQUEST['altura'], 100, 1, 0) != null) {
+                $aErrores['altura'] = validacionFormularios::comprobarFloat($_REQUEST['altura'], 100, 1, 0);
                 $entradaOK = false;
             } else {
                 $aRespuestas['altura'] = (float) $_REQUEST['altura'];
@@ -55,7 +63,7 @@
         if ($entradaOK) {
             // Aquí iría el procesamiento con datos válidos
             echo "<h2>Formulario enviado correctamente</h2>";
-            echo "<p>Nombre: " . htmlspecialchars($aRespuestas['nombre']) . "</p>";
+            echo "<p>Nombre: " . $aRespuestas['nombre'] . "</p>";
             echo "<p>Edad: " . $aRespuestas['edad'] . "</p>";
             echo "<p>Altura: " . $aRespuestas['altura'] . "</p>";
         } else {
@@ -63,7 +71,7 @@
             ?>
             <form action="" method="post">
                 <label for="nombre">Nombre:</label><br>
-                <input type="text" name="nombre" id="nombre">
+                <input type="text" name="nombre" id="nombre" required>
                 <span style="color:red;"><?php echo $aErrores['nombre']; ?></span><br><br>
 
                 <label for="edad">Edad:</label><br>

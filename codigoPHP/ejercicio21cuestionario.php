@@ -5,6 +5,14 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Ejercicio 21 Cuestionario</title>
+        <style>
+            input:required{
+                background-color: lightyellow;
+            }
+            input:disabled{
+                background-color: lightgrey;
+            }
+        </style>
     </head>
 <body>
     <h2>Formulario de Tipos Básicos</h2>

@@ -30,6 +30,7 @@
         
         // FOR
         echo "<b>RECORRIDO CON FOR</b><br>";
+        
         for ($indiceFilas = 0; $indiceFilas < NFILAS; $indiceFilas++) {
             echo "en la fila " . $indiceFilas + 1 . " están ocupados los asientos: ";
             for ($indiceColumnas = 0; $indiceColumnas < NCOLUMNAS; $indiceColumnas++) {
@@ -72,7 +73,6 @@
                     echo "'" . ($indiceColumnas + 1) . " por " . $valor . "'" . " ";
                 }
             }
-
             echo "<br>";
         }
         ?>
