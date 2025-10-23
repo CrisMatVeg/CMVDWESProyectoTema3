@@ -9,6 +9,9 @@
 
     <body>
         <?php
+        /*  @author Cristian Mateos Vega
+         *  @since 09/10/2025
+         */
         $timestamp = time();
         echo "El timestamp actual es: " . $timestamp;
         ?>

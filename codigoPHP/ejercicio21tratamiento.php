@@ -9,6 +9,9 @@
 
     <body>
         <?php
+        /*  @author Cristian Mateos Vega
+         *  @since 20/10/2025
+         */
         $nombre = isset($_REQUEST['nombre']) ? htmlspecialchars($_REQUEST['nombre']) : 'No proporcionado';
         $edad = isset($_REQUEST['edad']) ? (int) $_REQUEST['edad'] : 0;
         $altura = isset($_REQUEST['altura']) ? (float) $_REQUEST['altura'] : 0.0;

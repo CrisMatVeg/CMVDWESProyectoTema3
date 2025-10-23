@@ -9,6 +9,9 @@
 
     <body>
         <?php
+        /*  @author Cristian Mateos Vega
+         *  @since 09/10/2025
+         */
         $fecha = new DateTime();
         $fecha->modify('+60 days');
         echo "Fecha dentro de 60 días: " . $fecha->format('Y-m-d');

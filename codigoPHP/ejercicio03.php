@@ -13,17 +13,29 @@
          *  @since 13/10/2025
          */
 
-        setlocale(LC_TIME, 'es_ES.UTF-8', 'es_ES', 'spanish', 'es');
-        date_default_timezone_set('Europe/Lisbon');
+        date_default_timezone_set('Europe/Madrid');
+
         $tFecha = new DateTime();
-        $fX = $tFecha;
-        echo $fX->format('d-m-Y h:i:s') . "<br>";
-        echo $fX->format('Y') . "<br>";
-        echo strftime('%B', $tFecha->getTimestamp()) . "<br>";
-        echo strftime('%A', $tFecha->getTimestamp()) . "<br>";
-        echo strftime('%d de %B del %Y', $tFecha->getTimestamp()) . "<br>";
-        echo $fX->format('h:i') . "<br>";
-        echo $fX->format('h:i:s') . "<br>";
+
+        // Arrays con los nombres de los días y los meses
+        $aDias = array("domingo", "lunes", "martes", "miércoles", "jueves", "viernes", "sábado");
+        $aMeses = array(
+            "enero", "febrero", "marzo", "abril", "mayo", "junio",
+            "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"
+        );
+
+        // Obtener el nombre del día y del mes
+        $diaSemanaActual = $aDias[$tFecha->format('w')];
+        $mesActual = $aMeses[$tFecha->format('n') - 1];
+
+        // Mostrar resultados
+        echo $tFecha->format('d-m-Y H:i:s') . "<br>";
+        echo "Año: " . $tFecha->format('Y') . "<br>";
+        echo "Mes: " . $mesActual . "<br>";
+        echo "Día: " . $diaSemanaActual . "<br>";
+        echo $diaSemanaActual . ", " . $tFecha->format('d') . " de " . $mesActual . " del " . $tFecha->format('Y') . "<br>";
+        echo "Hora: " . $tFecha->format('H:i') . "<br>";
+        echo "Hora con segundos: " . $tFecha->format('H:i:s') . "<br>";
         ?>
     </body>
 

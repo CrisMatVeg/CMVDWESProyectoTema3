@@ -5,6 +5,14 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Ejercicio 24</title>
+        <style>
+            input:required{
+                background-color: lightyellow;
+            }
+            input:disabled{
+                background-color: lightgrey;
+            }
+        </style>
     </head>
     <body>
         <?php
@@ -66,7 +74,7 @@
             ?>
             <form action="" method="post">
                 <label for="nombre">Nombre:</label><br>
-                <input type="text" name="nombre" id="nombre" value="<?php echo ($aErrores['nombre'] == '') ? $aRespuestas['nombre'] : ''; ?>">
+                <input type="text" name="nombre" id="nombre" value="<?php echo ($aErrores['nombre'] == '') ? $aRespuestas['nombre'] : ''; ?>" required>
                 <span style="color:red;"><?php echo $aErrores['nombre']; ?></span><br><br>
 
                 <label for="edad">Edad:</label><br>
