@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Ejercicio 23</title>
         <style>
-            input:required{
+            .required{
                 background-color: lightyellow;
             }
             input:disabled{
@@ -19,8 +19,10 @@
         /*  @author Cristian Mateos Vega
          *  @since 22/10/2025
          */
-//Inicialización de variables
+
         require_once '../core/231018libreriaValidacion.php';
+//Inicialización de variables
+
         $entradaOK = true;
         $aErrores = [
             'nombre' => '',
@@ -35,27 +37,16 @@
 
 // Comprobar si el formulario se ha enviado
         if (isset($_REQUEST['enviar'])) {
-            if (validacionFormularios::comprobarAlfaNumerico($_REQUEST['nombre'], 100, 1, 0) != null) {
-                $aErrores['nombre'] = validacionFormularios::comprobarAlfaNumerico($_REQUEST['nombre'], 100, 1, 0);
-                $entradaOK = false;
-            } else {
-                $aRespuestas['nombre'] = htmlspecialchars($_REQUEST['nombre']);
-            }
+            $aErrores['nombre'] = validacionFormularios::comprobarAlfaNumerico($_REQUEST['nombre'], 100, 1, 1);
+            $aErrores['edad'] = validacionFormularios::comprobarEntero($_REQUEST['edad'], 100, 5, 0);
+            $aErrores['altura'] = validacionFormularios::comprobarFloat($_REQUEST['altura'], 100, 1, 0);
 
-            // Validar edad (entero)
-            if (validacionFormularios::comprobarEntero($_REQUEST['edad'], 100, 5, 0) != null) {
-                $aErrores['edad'] = validacionFormularios::comprobarEntero($_REQUEST['edad'], 100, 5, 0);
-                $entradaOK = false;
-            } else {
-                $aRespuestas['edad'] = (int) $_REQUEST['edad'];
-            }
-
-            // Validar altura (float)
-            if (validacionFormularios::comprobarFloat($_REQUEST['altura'], 100, 1, 0) != null) {
-                $aErrores['altura'] = validacionFormularios::comprobarFloat($_REQUEST['altura'], 100, 1, 0);
-                $entradaOK = false;
-            } else {
-                $aRespuestas['altura'] = (float) $_REQUEST['altura'];
+            foreach ($aErrores as $campo => $valor) {
+                if ($valor != null) { // Si ha habido algun error $entradaOK es falso.
+                    $entradaOK = false;
+                } else {
+                    $aRespuestas[$campo] = $_REQUEST[$campo]; // Guardamos el dato correcto en el array de Respuestas.
+                }
             }
         } else {
             // Formulario no enviado aún
@@ -75,9 +66,9 @@
             ?>
             <form action="" method="post">
                 <label for="nombre">Nombre:</label><br>
-                <input type="text" name="nombre" id="nombre" required>
+                <input type="text" name="nombre" id="nombre" class="required">
                 <span style="color:red;"><?php echo $aErrores['nombre']; ?></span><br><br>
-                
+
                 <label for="nombre">Apellidos:</label><br>
                 <input type="text" name="nombre" id="nombre" disabled><br><br>
 

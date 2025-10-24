@@ -6,11 +6,46 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Ejercicio 24</title>
         <style>
-            input:required{
-                background-color: lightyellow;
+            .required{
+                background-color: rgb(255, 255, 174);
             }
             input:disabled{
                 background-color: lightgrey;
+            }
+
+            * {
+                font-family: sans-serif;
+            }
+
+            body {
+                justify-content: center;
+                justify-items: center;
+            }
+
+            div {
+                padding: 20px;
+                width: 50vw;
+                height: 210px;
+                background-color: lightskyblue;
+                border-radius: 20px;
+            }
+
+            #enviar {
+                border-radius: 20px;
+                height: 30px;
+                width: 120px;
+                background-color: lightgreen;
+                border: 2px solid rgb(55, 55, 95);
+                font-weight: bold;
+            }
+
+            label,p{
+                font-weight: bold;
+            }
+            input{
+                height: 20px;
+                border-radius: 3px;
+                border-style: none;
             }
         </style>
     </head>
@@ -19,8 +54,9 @@
         /*  @author Cristian Mateos Vega
          *  @since 22/10/2025
          */
-//Inicialización de variables
+
         require_once '../core/231018libreriaValidacion.php';
+//Inicialización de variables
         $entradaOK = true;
         $aErrores = [
             'nombre' => '',
@@ -34,28 +70,18 @@
         ];
 
 // Comprobar si el formulario se ha enviado
+
         if (isset($_REQUEST['enviar'])) {
-            if (validacionFormularios::comprobarAlfaNumerico($_REQUEST['nombre'], 100, 1, 1) != null) {
-                $aErrores['nombre'] = validacionFormularios::comprobarAlfaNumerico($_REQUEST['nombre'], 100, 1, 1);
-                $entradaOK = false;
-            } else {
-                $aRespuestas['nombre'] = htmlspecialchars($_REQUEST['nombre']);
-            }
+            $aErrores['nombre'] = validacionFormularios::comprobarAlfaNumerico($_REQUEST['nombre'], 100, 1, 1);
+            $aErrores['edad'] = validacionFormularios::comprobarEntero($_REQUEST['edad'], 100, 5, 0);
+            $aErrores['altura'] = validacionFormularios::comprobarFloat($_REQUEST['altura'], 100, 1, 0);
 
-            // Validar edad (entero)
-            if (validacionFormularios::comprobarEntero($_REQUEST['edad'], 100, 5, 1) != null) {
-                $aErrores['edad'] = validacionFormularios::comprobarEntero($_REQUEST['edad'], 100, 5, 1);
-                $entradaOK = false;
-            } else {
-                $aRespuestas['edad'] = (int) $_REQUEST['edad'];
-            }
-
-            // Validar altura (float)
-            if (validacionFormularios::comprobarFloat($_REQUEST['altura'], 100, 1, 1) != null) {
-                $aErrores['altura'] = validacionFormularios::comprobarFloat($_REQUEST['altura'], 100, 1, 1);
-                $entradaOK = false;
-            } else {
-                $aRespuestas['altura'] = (float) $_REQUEST['altura'];
+            foreach ($aErrores as $campo => $valor) {
+                if ($valor != null) { // Si ha habido algun error $entradaOK es falso.
+                    $entradaOK = false;
+                } else {
+                    $aRespuestas[$campo] = $_REQUEST[$campo]; // Guardamos el dato correcto en el array de Respuestas.
+                }
             }
         } else {
             // Formulario no enviado aún
@@ -66,27 +92,32 @@
         if ($entradaOK) {
             //Mostrar respuestas con datos (correctos) introducidos
             echo "<h2>Formulario enviado correctamente</h2>";
-            echo "<p>String: " . $aRespuestas['nombre'] . "</p>";
-            echo "<p>Entero: " . $aRespuestas['edad'] . "</p>";
-            echo "<p>Float: " . $aRespuestas['altura'] . "</p>";
+            echo "<div>";
+            echo "<p>Nombre: " . $aRespuestas['nombre'] . "</p>";
+            echo "<p>Edad: " . $aRespuestas['edad'] . "</p>";
+            echo "<p>Altura: " . $aRespuestas['altura'] . "</p>";
+            echo "</div>";
         } else {
             // Mostrar formulario y mensajes de error (si los hay)
             ?>
-            <form action="" method="post">
-                <label for="nombre">Nombre:</label><br>
-                <input type="text" name="nombre" id="nombre" value="<?php echo ($aErrores['nombre'] == '') ? $aRespuestas['nombre'] : ''; ?>" required>
-                <span style="color:red;"><?php echo $aErrores['nombre']; ?></span><br><br>
+            <h1>FORMULARIO: BASICO</h1>
+            <div>
+                <form action="" method="post">
+                    <label for="nombre">Nombre:</label><br>
+                    <input type="text" name="nombre" id="nombre" class="required" value="<?php echo (empty($aErrores['nombre'])) ? $aRespuestas['nombre'] : ''; ?>">
+                    <span style="color:red;"><?php echo $aErrores['nombre']; ?></span><br><br>
 
-                <label for="edad">Edad:</label><br>
-                <input type="number" name="edad" id="edad" value="<?php echo ($aErrores['edad'] == '') ? $aRespuestas['edad'] : ''; ?>">
-                <span style="color:red;"><?php echo $aErrores['edad']; ?></span><br><br>
+                    <label for="edad">Edad:</label><br>
+                    <input type="number" name="edad" id="edad" value="<?php echo (empty($aErrores['edad'])) ? $aRespuestas['edad'] : ''; ?>">
+                    <span style="color:red;"><?php echo $aErrores['edad']; ?></span><br><br>
 
-                <label for="altura">Altura:</label><br>
-                <input type="float" name="altura" id="altura" value="<?php echo ($aErrores['altura'] == '') ? $aRespuestas['altura'] : ''; ?>">
-                <span style="color:red;"><?php echo $aErrores['altura']; ?></span><br><br>
+                    <label for="altura">Altura:</label><br>
+                    <input type="float" name="altura" id="altura" value="<?php echo (empty($aErrores['altura'])) ? $aRespuestas['altura'] : ''; ?>">
+                    <span style="color:red;"><?php echo $aErrores['altura']; ?></span><br><br>
 
-                <input type="submit" name="enviar" value="Enviar">
-            </form>
+                    <input type="submit" name="enviar" value="Enviar" id="enviar">
+                </form>
+            </div>
             <?php
         }
         ?>
