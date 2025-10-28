@@ -164,7 +164,7 @@
                 <div>
                     <label>¿Cómo te sientes hoy? (* y una única selección permitida)</label>
                     <div class="radio-group">
-                        <label>MUY MAL <input type="radio" name="estado" value="muy mal"></label><br>
+                        <label>MUY MAL <input type="radio" name="estado" value="muy mal" checked></label><br>
                         <label>MAL <input type="radio" name="estado" value="mal"></label><br>
                         <label>REGULAR <input type="radio" name="estado" value="regular"></label><br>
                         <label>BIEN <input type="radio" name="estado" value="bien"></label><br>
@@ -182,7 +182,7 @@
                     <label>¿Cómo se presentan las vacaciones de navidad? (* Cuadro de lista con los siguientes valores posibles:
                         Ni idea, Con la familia, De fiesta, Trabajando, Estudiando DWES)</label><br><br>
                     <select name="vacaciones">
-                        <option value="ni idea">Ni idea</option>
+                        <option value="ni idea" selected>Ni idea</option>
                         <option value="estar con la familia">Con la familia</option>
                         <option value="salir de fiesta">De fiesta</option>
                         <option value="trabajar">Trabajando</option>

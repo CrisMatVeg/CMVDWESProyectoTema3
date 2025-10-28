@@ -75,6 +75,7 @@
         foreach ($teatro[0] as $nColumna => $fila) {
             echo "<td class='nColumna'> Columna " . ($nColumna + 1) . "</td>";
         }
+        echo "<td class='nColumna'></td>";
 
         echo "</tr>";
         for ($indiceFilas = 0; $indiceFilas < NFILAS; $indiceFilas++) {
@@ -87,10 +88,15 @@
                     echo "<td></td>";
                 }
             }
+            echo "<td class='nFila'>Fila " . ($indiceFilas + 1) . "</td>";
             echo '</tr>';
         }
+        echo "<td class='nColumna'></td>";
+        foreach ($teatro[2] as $nColumna => $fila) {
+            echo "<td class='nColumna'> Columna " . ($nColumna + 1) . "</td>";
+        }
+        echo "<td class='nColumna'></td>";
         echo '</table><br>';
-
         // WHILE
         echo "<br>";
         echo "<b>RECORRIDO CON WHILE</b><br><br>";
