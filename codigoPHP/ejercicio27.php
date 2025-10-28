@@ -164,11 +164,11 @@
                 <div>
                     <label>¿Cómo te sientes hoy? (* y una única selección permitida)</label>
                     <div class="radio-group">
-                        <label>MUY MAL <input type="radio" name="estado" value="muy mal" checked></label><br>
-                        <label>MAL <input type="radio" name="estado" value="mal"></label><br>
-                        <label>REGULAR <input type="radio" name="estado" value="regular"></label><br>
-                        <label>BIEN <input type="radio" name="estado" value="bien"></label><br>
-                        <label>MUY BIEN <input type="radio" name="estado" value="muy bien"></label>
+                        <label>MUY MAL <input type="radio" name="estado" value="muy mal" <?php echo ($aRespuestas['estado'] === 'muy mal') ? 'checked' : ''; ?>></label><br>
+                        <label>MAL <input type="radio" name="estado" value="mal" <?php echo ($aRespuestas['estado'] === 'mal') ? 'checked' : ''; ?>></label><br>
+                        <label>REGULAR <input type="radio" name="estado" value="regular" <?php echo ($aRespuestas['estado'] === 'regular') ? 'checked' : ''; ?>></label><br>
+                        <label>BIEN <input type="radio" name="estado" value="bien" <?php echo ($aRespuestas['estado'] === 'bien') ? 'checked' : ''; ?>></label><br>
+                        <label>MUY BIEN <input type="radio" name="estado" value="muy bien" <?php echo ($aRespuestas['estado'] === 'muy bien') ? 'checked' : ''; ?>></label>
                     </div>
                 </div>
 
@@ -182,11 +182,11 @@
                     <label>¿Cómo se presentan las vacaciones de navidad? (* Cuadro de lista con los siguientes valores posibles:
                         Ni idea, Con la familia, De fiesta, Trabajando, Estudiando DWES)</label><br><br>
                     <select name="vacaciones">
-                        <option value="ni idea" selected>Ni idea</option>
-                        <option value="estar con la familia">Con la familia</option>
-                        <option value="salir de fiesta">De fiesta</option>
-                        <option value="trabajar">Trabajando</option>
-                        <option value="estudiar DWES">Estudiando DWES</option>
+                        <option value="ni idea" <?php echo ($aRespuestas['vacaciones'] === 'ni idea') ? 'selected' : ''; ?>>Ni idea</option>
+                        <option value="estar con la familia" <?php echo ($aRespuestas['vacaciones'] === 'estar con la familia') ? 'selected' : ''; ?>>Con la familia</option>
+                        <option value="salir de fiesta" <?php echo ($aRespuestas['vacaciones'] === 'salir de fiesta') ? 'selected' : ''; ?>>De fiesta</option>
+                        <option value="trabajar" <?php echo ($aRespuestas['vacaciones'] === 'trabajar') ? 'selected' : ''; ?>>Trabajando</option>
+                        <option value="estudiar DWES" <?php echo ($aRespuestas['vacaciones'] === 'estudiar DWES') ? 'selected' : ''; ?>>Estudiando DWES</option>
                     </select>
                 </div>
 
