@@ -31,8 +31,8 @@
         define("NFILAS", 20);
         define("NCOLUMNAS", 15);
 
-        for ($indiceFilas = 0; $indiceFilas < 20; $indiceFilas++) {
-            for ($indiceColumnas = 0; $indiceColumnas < 15; $indiceColumnas++) {
+        for ($indiceFilas = 0; $indiceFilas < NFILAS; $indiceFilas++) {
+            for ($indiceColumnas = 0; $indiceColumnas < NCOLUMNAS; $indiceColumnas++) {
                 $teatro[$indiceFilas][$indiceColumnas] = null;
             }
         }

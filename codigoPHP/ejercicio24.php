@@ -79,30 +79,32 @@
             foreach ($aErrores as $campo => $valor) {
                 if ($valor != null) { // Si ha habido algun error $entradaOK es falso.
                     $entradaOK = false;
-                } else {
-                    $aRespuestas[$campo] = $_REQUEST[$campo]; // Guardamos el dato correcto en el array de Respuestas.
                 }
             }
         } else {
             // Formulario no enviado aún
             $entradaOK = false;
         }
-
 // Tratamiento del formulario
+
         if ($entradaOK) {
+            foreach ($aRespuestas as $campo => $valor) {
+                $aRespuestas[$campo] = $_REQUEST[$campo];
+            }
             //Mostrar respuestas con datos (correctos) introducidos
             echo "<h2>Formulario enviado correctamente</h2>";
             echo "<div>";
-            echo "<p>Nombre: " . $aRespuestas['nombre'] . "</p>";
-            echo "<p>Edad: " . $aRespuestas['edad'] . "</p>";
-            echo "<p>Altura: " . $aRespuestas['altura'] . "</p>";
+            print("<br><h3>Respuestas del usuario</h3><br>");
+            foreach ($aRespuestas as $campo => $valor) {
+                print("$campo del usuario : " . $valor . '</br>');
+            }
             echo "</div>";
         } else {
             // Mostrar formulario y mensajes de error (si los hay)
             ?>
             <h1>FORMULARIO: BASICO</h1>
             <div>
-                <form action="" method="post">
+                <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post">
                     <label for="nombre">Nombre:</label><br>
                     <input type="text" name="nombre" id="nombre" class="required" value="<?php echo (empty($aErrores['nombre'])) ? $aRespuestas['nombre'] : ''; ?>">
                     <span style="color:red;"><?php echo $aErrores['nombre']; ?></span><br><br>
